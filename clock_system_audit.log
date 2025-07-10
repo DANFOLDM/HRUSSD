@@ -1,0 +1,769 @@
+2025-07-10 20:22:19,459 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 20:22:19,473 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 20:22:19,474 [INFO] Scheduler started
+2025-07-10 20:22:19,504 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 20:22:19,504 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 21:00:46,123 [WARNING] Run time of job "cleanup_sessions (trigger: interval[0:30:00], next run at: 2025-07-10 21:22:19 EAT)" was missed by 0:08:26.633827
+2025-07-10 21:03:43,100 [CRITICAL] USSD Processing Failed - Session: ATUid_4347bbfffb6051d78c303a012b5c74b6 | Phone: +254798908146 | Error: handle_main_menu() got an unexpected keyword argument 'inputs'
+2025-07-10 21:03:43,133 [INFO] USSD Request - Session: ATUid_4347bbfffb6051d78c303a012b5c74b6 | Phone: +254798908146 | Input: '' | Response: 'END System error. Please try again.' | Processed in 0.24s
+2025-07-10 21:03:43,264 [INFO] 127.0.0.1 - - [10/Jul/2025 21:03:43] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 21:05:26,865 [CRITICAL] USSD Processing Failed - Session: ATUid_0f4febc370d330f8ecd3c108dcdf2ba1 | Phone: +254798908146 | Error: handle_main_menu() got an unexpected keyword argument 'inputs'
+2025-07-10 21:05:26,868 [INFO] USSD Request - Session: ATUid_0f4febc370d330f8ecd3c108dcdf2ba1 | Phone: +254798908146 | Input: '' | Response: 'END System error. Please try again.' | Processed in 0.07s
+2025-07-10 21:05:26,883 [INFO] 127.0.0.1 - - [10/Jul/2025 21:05:26] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 21:22:19,500 [INFO] Running job "cleanup_sessions (trigger: interval[0:30:00], next run at: 2025-07-10 21:52:19 EAT)" (scheduled at 2025-07-10 21:22:19.459083+03:00)
+2025-07-10 21:22:19,526 [INFO] Cleaned up None stale sessions
+2025-07-10 21:22:19,528 [INFO] Job "cleanup_sessions (trigger: interval[0:30:00], next run at: 2025-07-10 21:52:19 EAT)" executed successfully
+2025-07-10 22:31:32,532 [WARNING] Run time of job "cleanup_sessions (trigger: interval[0:30:00], next run at: 2025-07-10 22:52:19 EAT)" was missed by 0:09:13.036661
+2025-07-10 22:33:22,759 [INFO] Scheduler has been shut down
+2025-07-10 22:35:59,935 [INFO] SMS service running in SANDBOX mode
+2025-07-10 22:38:29,897 [INFO] SMS service running in SANDBOX mode
+2025-07-10 22:39:14,587 [INFO] SMS service running in SANDBOX mode
+2025-07-10 22:39:14,831 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 22:39:14,837 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 22:39:14,838 [INFO] Scheduler started
+2025-07-10 22:39:14,858 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 22:39:14,859 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 22:40:59,196 [INFO] USSD Request - Session: ATUid_fbfe6d27ba1661aefaf679d6ae6e7684 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.00s
+2025-07-10 22:40:59,197 [INFO] 127.0.0.1 - - [10/Jul/2025 22:40:59] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:41:25,548 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:41:25,555 [INFO] USSD Request - Session: ATUid_fbfe6d27ba1661aefaf679d6ae6e7684 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.01s
+2025-07-10 22:41:25,560 [INFO] 127.0.0.1 - - [10/Jul/2025 22:41:25] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:41:31,629 [INFO] USSD Request - Session: ATUid_fbfe6d27ba1661aefaf679d6ae6e7684 | Phone: +254798908146 | Input: 'EMP123*1' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:41:31,630 [INFO] 127.0.0.1 - - [10/Jul/2025 22:41:31] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:41:47,313 [INFO] USSD Request - Session: ATUid_fbfe6d27ba1661aefaf679d6ae6e7684 | Phone: +254798908146 | Input: 'EMP123*1*1' | Response: 'END Too many invalid attempts. Goodbye.' | Processed in 0.00s
+2025-07-10 22:41:47,315 [INFO] 127.0.0.1 - - [10/Jul/2025 22:41:47] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:44:03,596 [INFO] USSD Request - Session: ATUid_86b102888b5b57d4db2611163d4df219 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.00s
+2025-07-10 22:44:03,601 [INFO] 127.0.0.1 - - [10/Jul/2025 22:44:03] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:44:11,837 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:44:11,839 [INFO] USSD Request - Session: ATUid_86b102888b5b57d4db2611163d4df219 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:44:11,841 [INFO] 127.0.0.1 - - [10/Jul/2025 22:44:11] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:44:21,039 [INFO] USSD Request - Session: ATUid_86b102888b5b57d4db2611163d4df219 | Phone: +254798908146 | Input: 'EMP123*1' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:44:21,040 [INFO] 127.0.0.1 - - [10/Jul/2025 22:44:21] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:46:29,301 [INFO] USSD Request - Session: ATUid_86b102888b5b57d4db2611163d4df219 | Phone: +254798908146 | Input: 'EMP123*1*2' | Response: 'END Too many invalid attempts. Goodbye.' | Processed in 0.00s
+2025-07-10 22:46:29,303 [INFO] 127.0.0.1 - - [10/Jul/2025 22:46:29] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:44:55,509 [INFO] USSD Request - Session: ATUid_e17fd86870b4a96d7a58fac615be6c92 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.00s
+2025-07-10 22:44:55,511 [INFO] 127.0.0.1 - - [10/Jul/2025 22:44:55] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:45:00,141 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:45:00,142 [INFO] USSD Request - Session: ATUid_e17fd86870b4a96d7a58fac615be6c92 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:45:00,142 [INFO] 127.0.0.1 - - [10/Jul/2025 22:45:00] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:45:07,648 [INFO] USSD Request - Session: ATUid_e17fd86870b4a96d7a58fac615be6c92 | Phone: +254798908146 | Input: 'EMP123*2' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:45:07,650 [INFO] 127.0.0.1 - - [10/Jul/2025 22:45:07] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:45:15,540 [INFO] USSD Request - Session: ATUid_e17fd86870b4a96d7a58fac615be6c92 | Phone: +254798908146 | Input: 'EMP123*2*3' | Response: 'END Too many invalid attempts. Goodbye.' | Processed in 0.00s
+2025-07-10 22:45:15,541 [INFO] 127.0.0.1 - - [10/Jul/2025 22:45:15] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:47:47,265 [INFO] USSD Request - Session: ATUid_352992c91f641b52c685856fff131660 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.01s
+2025-07-10 22:47:47,279 [INFO] 127.0.0.1 - - [10/Jul/2025 22:47:47] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:47:55,562 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:47:55,565 [INFO] USSD Request - Session: ATUid_352992c91f641b52c685856fff131660 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.01s
+2025-07-10 22:47:55,567 [INFO] 127.0.0.1 - - [10/Jul/2025 22:47:55] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:48:02,600 [INFO] USSD Request - Session: ATUid_352992c91f641b52c685856fff131660 | Phone: +254798908146 | Input: 'EMP123*6' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:48:02,603 [INFO] 127.0.0.1 - - [10/Jul/2025 22:48:02] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:53:54,448 [INFO] USSD Request - Session: ATUid_018754165f5483c7be4c1e8119aae621 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.02s
+2025-07-10 22:53:54,468 [INFO] 127.0.0.1 - - [10/Jul/2025 22:53:54] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:54:02,031 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:54:02,037 [INFO] USSD Request - Session: ATUid_018754165f5483c7be4c1e8119aae621 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.01s
+2025-07-10 22:54:02,041 [INFO] 127.0.0.1 - - [10/Jul/2025 22:54:02] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:54:08,447 [INFO] USSD Request - Session: ATUid_018754165f5483c7be4c1e8119aae621 | Phone: +254798908146 | Input: 'EMP123*2' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:54:08,449 [INFO] 127.0.0.1 - - [10/Jul/2025 22:54:08] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:54:59,215 [INFO] Scheduler has been shut down
+2025-07-10 22:55:22,979 [INFO] SMS service running in SANDBOX mode
+2025-07-10 22:55:23,153 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 22:55:23,157 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 22:55:23,157 [INFO] Scheduler started
+2025-07-10 22:55:23,164 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 22:55:23,164 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 22:55:47,420 [INFO] USSD Request - Session: ATUid_154cc8238bd937affa4ee8a05596e57b | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.01s
+2025-07-10 22:55:47,425 [INFO] 127.0.0.1 - - [10/Jul/2025 22:55:47] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:56:00,064 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:56:00,065 [INFO] USSD Request - Session: ATUid_154cc8238bd937affa4ee8a05596e57b | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Invalid option. Please try again:
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:56:00,066 [INFO] 127.0.0.1 - - [10/Jul/2025 22:56:00] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:56:12,689 [ERROR] Main Menu Error: string indices must be integers, not 'str'
+2025-07-10 22:56:12,690 [INFO] USSD Request - Session: ATUid_154cc8238bd937affa4ee8a05596e57b | Phone: +254798908146 | Input: 'EMP123*1' | Response: 'END System error. Please try again later.' | Processed in 0.01s
+2025-07-10 22:56:12,693 [INFO] 127.0.0.1 - - [10/Jul/2025 22:56:12] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:56:28,084 [INFO] USSD Request - Session: ATUid_7d574d447252514d6865e9337ec58574 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.00s
+2025-07-10 22:56:28,085 [INFO] 127.0.0.1 - - [10/Jul/2025 22:56:28] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:56:36,337 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 22:56:36,338 [INFO] USSD Request - Session: ATUid_7d574d447252514d6865e9337ec58574 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Invalid option. Please try again:
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 22:56:36,341 [INFO] 127.0.0.1 - - [10/Jul/2025 22:56:36] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 22:56:42,795 [ERROR] Main Menu Error: string indices must be integers, not 'str'
+2025-07-10 22:56:42,795 [INFO] USSD Request - Session: ATUid_7d574d447252514d6865e9337ec58574 | Phone: +254798908146 | Input: 'EMP123*5' | Response: 'END System error. Please try again later.' | Processed in 0.00s
+2025-07-10 22:56:42,796 [INFO] 127.0.0.1 - - [10/Jul/2025 22:56:42] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:01:40,299 [INFO] Scheduler has been shut down
+2025-07-10 23:03:58,252 [INFO] SMS service running in SANDBOX mode
+2025-07-10 23:03:58,534 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 23:03:58,540 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 23:03:58,541 [INFO] Scheduler started
+2025-07-10 23:03:58,557 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 23:03:58,557 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 23:02:29,882 [INFO] USSD Request - Session: ATUid_f84b2c183bf59af97d17f8e089590279 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.00s
+2025-07-10 23:02:29,888 [INFO] 127.0.0.1 - - [10/Jul/2025 23:02:29] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:02:38,846 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 23:02:38,849 [INFO] USSD Request - Session: ATUid_f84b2c183bf59af97d17f8e089590279 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.01s
+2025-07-10 23:02:38,852 [INFO] 127.0.0.1 - - [10/Jul/2025 23:02:38] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:02:44,737 [INFO] USSD Request - Session: ATUid_f84b2c183bf59af97d17f8e089590279 | Phone: +254798908146 | Input: 'EMP123*2' | Response: 'CON Welcome to ElevateHR
+Invalid option. Please try again:
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:02:44,739 [INFO] 127.0.0.1 - - [10/Jul/2025 23:02:44] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:02:51,468 [INFO] USSD Request - Session: ATUid_f84b2c183bf59af97d17f8e089590279 | Phone: +254798908146 | Input: 'EMP123*2*1' | Response: 'CON Welcome to ElevateHR
+Invalid option. Please try again:
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:02:51,470 [INFO] 127.0.0.1 - - [10/Jul/2025 23:02:51] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:02:58,406 [INFO] USSD Request - Session: ATUid_f84b2c183bf59af97d17f8e089590279 | Phone: +254798908146 | Input: 'EMP123*2*1*6' | Response: 'END Too many invalid attempts. Goodbye.' | Processed in 0.00s
+2025-07-10 23:02:58,407 [INFO] 127.0.0.1 - - [10/Jul/2025 23:02:58] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:08:23,282 [INFO] Scheduler has been shut down
+2025-07-10 23:10:05,193 [INFO] SMS service running in SANDBOX mode
+2025-07-10 23:10:05,439 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 23:10:05,442 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 23:10:05,442 [INFO] Scheduler started
+2025-07-10 23:10:05,454 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 23:10:05,455 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 23:09:28,371 [INFO] USSD Request - Session: ATUid_86e66a5e5a555ac47f35db7a0784ce5a | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Job ID:' | Processed in 0.00s
+2025-07-10 23:09:28,374 [INFO] 127.0.0.1 - - [10/Jul/2025 23:09:28] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:09:36,773 [INFO] [SANDBOX] SMS would send to ['+254798908146']: Welcome Employee to ElevateHR! Your ID: EMP123...
+2025-07-10 23:09:36,775 [INFO] USSD Request - Session: ATUid_86e66a5e5a555ac47f35db7a0784ce5a | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Welcome to ElevateHR
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.01s
+2025-07-10 23:09:36,777 [INFO] 127.0.0.1 - - [10/Jul/2025 23:09:36] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:09:43,790 [INFO] USSD Request - Session: ATUid_86e66a5e5a555ac47f35db7a0784ce5a | Phone: +254798908146 | Input: 'EMP123*2' | Response: 'CON Welcome to ElevateHR
+Invalid option. Please try again:
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.02s
+2025-07-10 23:09:43,791 [INFO] 127.0.0.1 - - [10/Jul/2025 23:09:43] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:09:52,637 [INFO] USSD Request - Session: ATUid_86e66a5e5a555ac47f35db7a0784ce5a | Phone: +254798908146 | Input: 'EMP123*2*6' | Response: 'CON Welcome to ElevateHR
+Invalid option. Please try again:
+Logged in as: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance Summary
+5. Payment Summary
+6. Download Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:09:52,639 [INFO] 127.0.0.1 - - [10/Jul/2025 23:09:52] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:24:54,068 [INFO] Scheduler has been shut down
+2025-07-10 23:27:10,798 [INFO] SMS service running in SANDBOX mode
+2025-07-10 23:27:10,991 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 23:27:10,992 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 23:27:10,993 [INFO] Scheduler started
+2025-07-10 23:27:10,996 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 23:27:10,997 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 23:27:36,539 [ERROR] Menu Error: 'init_time'
+2025-07-10 23:27:36,541 [INFO] USSD Request - Session: ATUid_08a8634551c78b9f16b5db8fe9d40734 | Phone: +254798908146 | Input: '' | Response: 'END System error. Please try again.' | Processed in 0.00s
+2025-07-10 23:27:36,542 [INFO] 127.0.0.1 - - [10/Jul/2025 23:27:36] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:28:00,317 [ERROR] Menu Error: 'init_time'
+2025-07-10 23:28:00,317 [INFO] USSD Request - Session: ATUid_4b0fa6980bfd5e9e09dc9638b7ead774 | Phone: +254798908146 | Input: '' | Response: 'END System error. Please try again.' | Processed in 0.00s
+2025-07-10 23:28:00,318 [INFO] 127.0.0.1 - - [10/Jul/2025 23:28:00] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:30:10,195 [ERROR] Menu Error: 'init_time'
+2025-07-10 23:30:10,196 [INFO] USSD Request - Session: ATUid_e75a6d12de72983a377d864843096656 | Phone: +254798908146 | Input: '' | Response: 'END System error. Please try again.' | Processed in 0.00s
+2025-07-10 23:30:10,197 [INFO] 127.0.0.1 - - [10/Jul/2025 23:30:10] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:33:12,690 [ERROR] Menu Error: 'init_time'
+2025-07-10 23:33:12,691 [INFO] USSD Request - Session: ATUid_171db88ca7df942fab07709c6e77ec8e | Phone: +254798908146 | Input: '' | Response: 'END System error. Please try again.' | Processed in 0.00s
+2025-07-10 23:33:12,691 [INFO] 127.0.0.1 - - [10/Jul/2025 23:33:12] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:31:49,775 [INFO] Scheduler has been shut down
+2025-07-10 23:31:56,715 [INFO] SMS service running in SANDBOX mode
+2025-07-10 23:31:56,798 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 23:31:56,799 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 23:31:56,799 [INFO] Scheduler started
+2025-07-10 23:31:56,802 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 23:31:56,802 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 23:32:05,165 [INFO] USSD Request - Session: ATUid_f9d61f73b2967b4c6bd069e8953e0219 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:32:05,166 [INFO] 127.0.0.1 - - [10/Jul/2025 23:32:05] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:32:18,522 [INFO] USSD Request - Session: ATUid_f9d61f73b2967b4c6bd069e8953e0219 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:32:18,523 [INFO] 127.0.0.1 - - [10/Jul/2025 23:32:18] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:32:28,736 [INFO] USSD Request - Session: ATUid_f9d61f73b2967b4c6bd069e8953e0219 | Phone: +254798908146 | Input: 'EMP123*1' | Response: 'CON Main Menu
+Invalid option. Try again:
+Employee: EMP123
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:32:28,738 [INFO] 127.0.0.1 - - [10/Jul/2025 23:32:28] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:36:43,551 [INFO] Scheduler has been shut down
+2025-07-10 23:36:53,161 [INFO] SMS service running in SANDBOX mode
+2025-07-10 23:36:53,224 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 23:36:53,225 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 23:36:53,225 [INFO] Scheduler started
+2025-07-10 23:36:53,228 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 23:36:53,228 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 23:37:06,223 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:37:06,225 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:06] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:37:14,493 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:37:14,496 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:14] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:37:21,169 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: 'EMP123*2' | Response: 'CON CON Daily Status Report:
+1. Present at work
+2. Working remotely
+3. Sick leave
+4. On approved leave
+5. Unexpected absence
+6. View/edit past reports
+0. Main menu' | Processed in 0.00s
+2025-07-10 23:37:21,170 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:21] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:37:35,960 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: 'EMP123*2*1' | Response: 'CON CON Daily Status Report:
+1. Present at work
+2. Working remotely
+3. Sick leave
+4. On approved leave
+5. Unexpected absence
+6. View/edit past reports
+0. Main menu' | Processed in 0.00s
+2025-07-10 23:37:35,961 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:35] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:37:42,280 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: 'EMP123*2*1*2' | Response: 'CON CON Daily Status Report:
+1. Present at work
+2. Working remotely
+3. Sick leave
+4. On approved leave
+5. Unexpected absence
+6. View/edit past reports
+0. Main menu' | Processed in 0.00s
+2025-07-10 23:37:42,282 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:42] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:37:53,450 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: 'EMP123*2*1*2*0' | Response: 'CON CON Daily Status Report:
+1. Present at work
+2. Working remotely
+3. Sick leave
+4. On approved leave
+5. Unexpected absence
+6. View/edit past reports
+0. Main menu' | Processed in 0.00s
+2025-07-10 23:37:53,451 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:53] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:37:58,642 [INFO] USSD Request - Session: ATUid_9191801e65121be0234a0537988579b5 | Phone: +254798908146 | Input: 'EMP123*2*1*2*0*0' | Response: 'CON CON Daily Status Report:
+1. Present at work
+2. Working remotely
+3. Sick leave
+4. On approved leave
+5. Unexpected absence
+6. View/edit past reports
+0. Main menu' | Processed in 0.00s
+2025-07-10 23:37:58,642 [INFO] 127.0.0.1 - - [10/Jul/2025 23:37:58] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:49:00,696 [INFO] Scheduler has been shut down
+2025-07-10 23:49:17,236 [INFO] SMS service running in SANDBOX mode
+2025-07-10 23:49:17,316 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-10 23:49:17,317 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-10 23:49:17,317 [INFO] Scheduler started
+2025-07-10 23:49:17,321 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-10 23:49:17,321 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-10 23:48:19,524 [INFO] USSD Request - Session: ATUid_bfd7301f6a6e568798d13b0e6631a24e | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:48:19,526 [INFO] 127.0.0.1 - - [10/Jul/2025 23:48:19] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:50:06,975 [INFO] USSD Request - Session: ATUid_bfd7301f6a6e568798d13b0e6631a24e | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:50:06,976 [INFO] 127.0.0.1 - - [10/Jul/2025 23:50:06] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:48:41,167 [INFO] USSD Request - Session: ATUid_bfd7301f6a6e568798d13b0e6631a24e | Phone: +254798908146 | Input: 'EMP123*2' | Response: 'CON Report Status:
+1. Daily Report
+2. Weekly Summary
+3. Log Absence
+0. Back' | Processed in 0.00s
+2025-07-10 23:48:41,168 [INFO] 127.0.0.1 - - [10/Jul/2025 23:48:41] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:48:47,481 [INFO] USSD Request - Session: ATUid_bfd7301f6a6e568798d13b0e6631a24e | Phone: +254798908146 | Input: 'EMP123*2*1' | Response: 'END Your weekly summary will be sent via SMS.' | Processed in 0.00s
+2025-07-10 23:48:47,482 [INFO] 127.0.0.1 - - [10/Jul/2025 23:48:47] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:49:17,167 [INFO] USSD Request - Session: ATUid_08cd2e5d37003325601f703be90e8819 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:49:17,167 [INFO] 127.0.0.1 - - [10/Jul/2025 23:49:17] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:49:36,732 [INFO] USSD Request - Session: ATUid_08cd2e5d37003325601f703be90e8819 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:49:36,735 [INFO] 127.0.0.1 - - [10/Jul/2025 23:49:36] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:49:52,164 [INFO] USSD Request - Session: ATUid_08cd2e5d37003325601f703be90e8819 | Phone: +254798908146 | Input: 'EMP123*1' | Response: 'CON Clock System
+Status: Clocked Out
+
+1. Clock In
+0. Back' | Processed in 0.00s
+2025-07-10 23:49:52,164 [INFO] 127.0.0.1 - - [10/Jul/2025 23:49:52] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:50:02,769 [INFO] USSD Request - Session: ATUid_08cd2e5d37003325601f703be90e8819 | Phone: +254798908146 | Input: 'EMP123*1*1' | Response: 'END Clocked IN at 11:50 PM. Expected OUT: 07:50 AM' | Processed in 0.00s
+2025-07-10 23:50:02,769 [INFO] 127.0.0.1 - - [10/Jul/2025 23:50:02] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:50:29,017 [INFO] USSD Request - Session: ATUid_c2e6d72241304cdd255719582b64a9be | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:50:29,018 [INFO] 127.0.0.1 - - [10/Jul/2025 23:50:29] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:50:39,037 [INFO] USSD Request - Session: ATUid_c2e6d72241304cdd255719582b64a9be | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:50:39,038 [INFO] 127.0.0.1 - - [10/Jul/2025 23:50:39] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:50:56,542 [ERROR] Main Menu Error: _handle_type_selection() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/main_menu.py", line 116, in handle_main_menu
+    response = handler(menu_inputs, phone, session)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/leave_handler.py", line 103, in handle_leave
+    return handler(input_for_stage, session if stage != 'confirm' else phone, session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _handle_type_selection() takes 2 positional arguments but 3 were given
+2025-07-10 23:50:56,549 [INFO] USSD Request - Session: ATUid_c2e6d72241304cdd255719582b64a9be | Phone: +254798908146 | Input: 'EMP123*3' | Response: 'END System error. Please try again later.' | Processed in 0.01s
+2025-07-10 23:50:56,550 [INFO] 127.0.0.1 - - [10/Jul/2025 23:50:56] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:51:02,166 [INFO] USSD Request - Session: ATUid_961f2e368b9fc1cb16c4f532d27d74d1 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:51:02,166 [INFO] 127.0.0.1 - - [10/Jul/2025 23:51:02] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:51:25,483 [INFO] USSD Request - Session: ATUid_961f2e368b9fc1cb16c4f532d27d74d1 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:51:25,483 [INFO] 127.0.0.1 - - [10/Jul/2025 23:51:25] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:53:09,614 [ERROR] Main Menu Error: _handle_type_selection() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/main_menu.py", line 116, in handle_main_menu
+    response = handler(menu_inputs, phone, session)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/leave_handler.py", line 103, in handle_leave
+    return handler(input_for_stage, session if stage != 'confirm' else phone, session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _handle_type_selection() takes 2 positional arguments but 3 were given
+2025-07-10 23:53:09,618 [INFO] USSD Request - Session: ATUid_961f2e368b9fc1cb16c4f532d27d74d1 | Phone: +254798908146 | Input: 'EMP123*3' | Response: 'END System error. Please try again later.' | Processed in 0.01s
+2025-07-10 23:53:09,620 [INFO] 127.0.0.1 - - [10/Jul/2025 23:53:09] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:51:54,498 [INFO] USSD Request - Session: ATUid_07a9003d6af3178563ac36b095857b8c | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:51:54,499 [INFO] 127.0.0.1 - - [10/Jul/2025 23:51:54] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:53:44,664 [INFO] USSD Request - Session: ATUid_07a9003d6af3178563ac36b095857b8c | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:53:44,665 [INFO] 127.0.0.1 - - [10/Jul/2025 23:53:44] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:53:48,615 [INFO] USSD Request - Session: ATUid_3e6d8a8c964771b0a131573b92dadd71 | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:53:48,617 [INFO] 127.0.0.1 - - [10/Jul/2025 23:53:48] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:02,498 [INFO] USSD Request - Session: ATUid_3e6d8a8c964771b0a131573b92dadd71 | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:54:02,499 [INFO] 127.0.0.1 - - [10/Jul/2025 23:54:02] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:08,053 [INFO] USSD Request - Session: ATUid_3e6d8a8c964771b0a131573b92dadd71 | Phone: +254798908146 | Input: 'EMP123*4' | Response: 'CON Performance Center:
+1. View My Ratings
+2. My Current Goals
+3. Training History
+4. Request Feedback
+0. Back' | Processed in 0.00s
+2025-07-10 23:54:08,054 [INFO] 127.0.0.1 - - [10/Jul/2025 23:54:08] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:14,236 [INFO] Feedback Request: {"employee": "+254711082000", "date": "2025-07-10", "comment": "1", "status": "pending"}
+2025-07-10 23:54:14,237 [ERROR] Main Menu Error: 'feedback_requests'
+Traceback (most recent call last):
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/main_menu.py", line 116, in handle_main_menu
+    response = handler(menu_inputs, phone, session)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/performance_handler.py", line 200, in handle_performance
+    return _handle_request_feedback(inputs[1:], phone, session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/performance_handler.py", line 172, in _handle_request_feedback
+    _submit_feedback_request(phone, feedback_text)
+  File "/home/user_majimajirebellion90/Desktop/HRUSSD/handlers/performance_handler.py", line 69, in _submit_feedback_request
+    _get_user_data(phone)['feedback_requests'].append(request)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'feedback_requests'
+2025-07-10 23:54:14,239 [INFO] USSD Request - Session: ATUid_3e6d8a8c964771b0a131573b92dadd71 | Phone: +254798908146 | Input: 'EMP123*4*1' | Response: 'END System error. Please try again later.' | Processed in 0.00s
+2025-07-10 23:54:14,239 [INFO] 127.0.0.1 - - [10/Jul/2025 23:54:14] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:19,105 [INFO] USSD Request - Session: ATUid_b2c67973cab4516005dd8c92825fbb5a | Phone: +254798908146 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-10 23:54:19,107 [INFO] 127.0.0.1 - - [10/Jul/2025 23:54:19] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:31,233 [INFO] USSD Request - Session: ATUid_b2c67973cab4516005dd8c92825fbb5a | Phone: +254798908146 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-10 23:54:31,234 [INFO] 127.0.0.1 - - [10/Jul/2025 23:54:31] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:38,404 [INFO] USSD Request - Session: ATUid_b2c67973cab4516005dd8c92825fbb5a | Phone: +254798908146 | Input: 'EMP123*5' | Response: 'END Your payment summary will be sent via SMS.' | Processed in 0.00s
+2025-07-10 23:54:38,404 [INFO] 127.0.0.1 - - [10/Jul/2025 23:54:38] "POST /ussd HTTP/1.1" 200 -
+2025-07-10 23:54:57,034 [INFO] Scheduler has been shut down
+2025-07-11 00:03:48,326 [INFO] SMS service initialized in LIVE mode
+2025-07-11 00:03:48,468 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-11 00:03:48,469 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-11 00:03:48,469 [INFO] Scheduler started
+2025-07-11 00:03:48,475 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-11 00:03:48,475 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-11 00:05:53,144 [INFO] USSD Request - Session: ATUid_8e308d4bd6e129ae1a9efeaaa5d0d8bb | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:05:53,145 [INFO] 127.0.0.1 - - [11/Jul/2025 00:05:53] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:06:01,176 [INFO] USSD Request - Session: ATUid_8e308d4bd6e129ae1a9efeaaa5d0d8bb | Phone: +254743158232 | Input: 'We' | Response: 'CON Invalid ID. 2 attempts left.
+Enter Employee ID:' | Processed in 0.00s
+2025-07-11 00:06:01,177 [INFO] 127.0.0.1 - - [11/Jul/2025 00:06:01] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:07:33,081 [INFO] USSD Request - Session: ATUid_9616de68e68e82c58a758b0d7bf750cf | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:07:33,083 [INFO] 127.0.0.1 - - [11/Jul/2025 00:07:33] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:07:40,562 [INFO] USSD Request - Session: ATUid_9616de68e68e82c58a758b0d7bf750cf | Phone: +254743158232 | Input: 'EMP123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-11 00:07:40,563 [INFO] 127.0.0.1 - - [11/Jul/2025 00:07:40] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:07:45,720 [INFO] USSD Request - Session: ATUid_9616de68e68e82c58a758b0d7bf750cf | Phone: +254743158232 | Input: 'EMP123*1' | Response: 'CON Clock System
+Status: Clocked Out
+
+1. Clock In
+0. Back' | Processed in 0.00s
+2025-07-11 00:07:45,721 [INFO] 127.0.0.1 - - [11/Jul/2025 00:07:45] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:07:50,175 [INFO] USSD Request - Session: ATUid_9616de68e68e82c58a758b0d7bf750cf | Phone: +254743158232 | Input: 'EMP123*1*1' | Response: 'END Clocked IN at 12:07 AM. Expected OUT: 08:07 AM' | Processed in 0.00s
+2025-07-11 00:07:50,176 [INFO] 127.0.0.1 - - [11/Jul/2025 00:07:50] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:10:40,062 [INFO] USSD Request - Session: ATUid_94b36015ea0338833b7cb838b322a8e5 | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:10:40,063 [INFO] 127.0.0.1 - - [11/Jul/2025 00:10:40] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:10:51,869 [INFO] USSD Request - Session: ATUid_94b36015ea0338833b7cb838b322a8e5 | Phone: +254743158232 | Input: 'Emp123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-11 00:10:51,869 [INFO] 127.0.0.1 - - [11/Jul/2025 00:10:51] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:11:04,374 [INFO] USSD Request - Session: ATUid_94b36015ea0338833b7cb838b322a8e5 | Phone: +254743158232 | Input: 'Emp123*2' | Response: 'CON Report Status:
+1. Daily Report
+2. Weekly Summary
+3. Log Absence
+0. Back' | Processed in 0.00s
+2025-07-11 00:11:04,375 [INFO] 127.0.0.1 - - [11/Jul/2025 00:11:04] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:11:08,787 [INFO] USSD Request - Session: ATUid_94b36015ea0338833b7cb838b322a8e5 | Phone: +254743158232 | Input: 'Emp123*2*1' | Response: 'END Your weekly summary will be sent via SMS.' | Processed in 0.00s
+2025-07-11 00:11:08,789 [INFO] 127.0.0.1 - - [11/Jul/2025 00:11:08] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:13:28,652 [INFO] USSD Request - Session: ATUid_531bc9f1560aea49402f53ebf09f4b50 | Phone: +254715067724 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:13:28,658 [INFO] 127.0.0.1 - - [11/Jul/2025 00:13:28] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:13:39,514 [INFO] USSD Request - Session: ATUid_531bc9f1560aea49402f53ebf09f4b50 | Phone: +254715067724 | Input: '1' | Response: 'CON Invalid ID. 2 attempts left.
+Enter Employee ID:' | Processed in 0.00s
+2025-07-11 00:13:39,515 [INFO] 127.0.0.1 - - [11/Jul/2025 00:13:39] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:19:16,694 [INFO] Scheduler has been shut down
+2025-07-11 00:19:23,466 [INFO] SMS service initialized in LIVE mode
+2025-07-11 00:19:23,569 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-11 00:19:23,571 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-11 00:19:23,571 [INFO] Scheduler started
+2025-07-11 00:19:23,574 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-11 00:19:23,574 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-11 00:21:06,842 [INFO] USSD Request - Session: ATUid_882e4a544932f7fb15c2bfcce6ac4e61 | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:21:06,845 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:06] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:21:14,420 [INFO] USSD Request - Session: ATUid_882e4a544932f7fb15c2bfcce6ac4e61 | Phone: +254743158232 | Input: 'emp123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-11 00:21:14,420 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:14] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:21:21,308 [INFO] USSD Request - Session: ATUid_882e4a544932f7fb15c2bfcce6ac4e61 | Phone: +254743158232 | Input: 'emp123*5' | Response: 'END Your payment summary will be sent via SMS.' | Processed in 0.00s
+2025-07-11 00:21:21,309 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:21] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:21:40,960 [INFO] USSD Request - Session: ATUid_86eb67f73ed888ab549053213971a922 | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:21:40,961 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:40] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:21:49,410 [INFO] USSD Request - Session: ATUid_86eb67f73ed888ab549053213971a922 | Phone: +254743158232 | Input: 'emp123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-11 00:21:49,411 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:49] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:21:54,648 [INFO] USSD Request - Session: ATUid_86eb67f73ed888ab549053213971a922 | Phone: +254743158232 | Input: 'emp123*2' | Response: 'CON Report Status:
+1. Daily Report
+2. Weekly Summary
+3. Log Absence
+0. Back' | Processed in 0.00s
+2025-07-11 00:21:54,649 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:54] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:21:58,613 [INFO] USSD Request - Session: ATUid_86eb67f73ed888ab549053213971a922 | Phone: +254743158232 | Input: 'emp123*2*1' | Response: 'END Your weekly summary will be sent via SMS.' | Processed in 0.00s
+2025-07-11 00:21:58,614 [INFO] 127.0.0.1 - - [11/Jul/2025 00:21:58] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:27:09,885 [INFO] Scheduler has been shut down
+2025-07-11 00:27:17,977 [INFO] SMS service initialized in LIVE mode
+2025-07-11 00:27:18,079 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-11 00:27:18,080 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-11 00:27:18,080 [INFO] Scheduler started
+2025-07-11 00:27:18,084 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-11 00:27:18,084 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-11 00:30:08,886 [INFO] USSD Request - Session: ATUid_71022e8ba118bd12d2df8924aec264d6 | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:30:08,887 [INFO] 127.0.0.1 - - [11/Jul/2025 00:30:08] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:30:16,930 [INFO] USSD Request - Session: ATUid_71022e8ba118bd12d2df8924aec264d6 | Phone: +254743158232 | Input: 'emp123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-11 00:30:16,932 [INFO] 127.0.0.1 - - [11/Jul/2025 00:30:16] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:30:21,182 [INFO] USSD Request - Session: ATUid_71022e8ba118bd12d2df8924aec264d6 | Phone: +254743158232 | Input: 'emp123*1' | Response: 'CON Clock System
+Status: Clocked Out
+
+1. Clock In
+0. Back' | Processed in 0.00s
+2025-07-11 00:30:21,182 [INFO] 127.0.0.1 - - [11/Jul/2025 00:30:21] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:30:26,588 [INFO] SMS sent to ['+254743158232']. Response: {'SMSMessageData': {'Message': 'Sent to 0/1 Total Cost: 0', 'Recipients': [{'cost': '0', 'messageId': 'None', 'number': '+254743158232', 'status': 'UserInBlacklist', 'statusCode': 406}]}}
+2025-07-11 00:30:26,589 [INFO] USSD Request - Session: ATUid_71022e8ba118bd12d2df8924aec264d6 | Phone: +254743158232 | Input: 'emp123*1*1' | Response: 'END Clocked IN at 12:30 AM. Expected OUT: 08:30 AM' | Processed in 0.71s
+2025-07-11 00:30:26,590 [INFO] 127.0.0.1 - - [11/Jul/2025 00:30:26] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:30:44,226 [INFO] USSD Request - Session: ATUid_7c7c97f9bdef97b48f02c5a6d20ef647 | Phone: +254743158232 | Input: '' | Response: 'CON Please enter your Employee ID:' | Processed in 0.00s
+2025-07-11 00:30:44,226 [INFO] 127.0.0.1 - - [11/Jul/2025 00:30:44] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:30:51,737 [INFO] USSD Request - Session: ATUid_7c7c97f9bdef97b48f02c5a6d20ef647 | Phone: +254743158232 | Input: 'emp123' | Response: 'CON Main Menu
+Employee: EMP123
+
+
+1. Clock In/Out
+2. Report Status
+3. Request Leave
+4. Performance
+5. Payment Summary
+6. Documents
+0. Exit' | Processed in 0.00s
+2025-07-11 00:30:51,738 [INFO] 127.0.0.1 - - [11/Jul/2025 00:30:51] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:31:03,091 [INFO] USSD Request - Session: ATUid_7c7c97f9bdef97b48f02c5a6d20ef647 | Phone: +254743158232 | Input: 'emp123*5' | Response: 'END Your payment summary will be sent via SMS.' | Processed in 0.00s
+2025-07-11 00:31:03,091 [INFO] 127.0.0.1 - - [11/Jul/2025 00:31:03] "POST /ussd HTTP/1.1" 200 -
+2025-07-11 00:45:42,887 [INFO] Scheduler has been shut down
+2025-07-11 00:45:50,074 [INFO] SMS service initialized in LIVE mode
+2025-07-11 00:45:50,201 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-11 00:45:50,203 [INFO] Added job "cleanup_sessions" to job store "default"
+2025-07-11 00:45:50,203 [INFO] Scheduler started
+2025-07-11 00:45:50,209 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.186.136:5000
+2025-07-11 00:45:50,210 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-11 01:15:50,261 [INFO] Running job "cleanup_sessions (trigger: interval[0:30:00], next run at: 2025-07-11 01:45:50 EAT)" (scheduled at 2025-07-11 01:15:50.201571+03:00)
+2025-07-11 01:15:50,291 [INFO] Cleaned up None stale sessions
+2025-07-11 01:15:50,292 [INFO] Job "cleanup_sessions (trigger: interval[0:30:00], next run at: 2025-07-11 01:45:50 EAT)" executed successfully
+2025-07-11 01:23:43,021 [INFO] Scheduler has been shut down

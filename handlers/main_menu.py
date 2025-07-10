@@ -3,87 +3,125 @@ from handlers.leave_handler import handle_leave
 from handlers.performance_handler import handle_performance
 from handlers.report_handler import handle_reporting
 from handlers.document_handler import handle_document
+from utils.sms_utils import SMSService
+import logging
+import time
 
-# Configuration constants
+# Configuration
 MAX_ATTEMPTS = 3
-SESSION_TIMEOUT = 300  # 5 minutes in seconds
+SESSION_TIMEOUT = 300  # 5 minutes
+VALID_JOB_IDS = {'EMP123', 'EMP456', 'MGR789'}
 
-def handle_main_menu(text, session, phone):
+sms = SMSService()
+
+def ussd_response(text):
+    """Ensure proper USSD response formatting."""
+    return text if text.startswith(('CON ', 'END ')) else f"CON {text}"
+
+def show_main_menu(session, error_msg=None):
+    """Generates the main menu string."""
+    menu_text = [
+        f"CON Main Menu\nSigned in as: {session.get('emp_id', 'Unknown')}",
+    ]
+    if error_msg:
+        menu_text.append(f"\n{error_msg}")
+    
+    menu_text.extend([
+        "\n",
+        "1. Clock In/Out",
+        "2. Report Status",
+        "3. Request Leave",
+        "4. Performance",
+        "5. Payment Summary",
+        "6. Documents",
+        "0. Exit"
+    ])
+    return "\n".join(menu_text)
+
+def handle_main_menu(inputs, phone, session):
     try:
-        inputs = text.split('*') if text else []
-        level = len(inputs)
-        
-        # Initialize session if new
+        # Initialize session if it's new
         if 'init_time' not in session:
             session.update({
                 'init_time': time.time(),
-                'attempts': 0,
-                'stage': 'main'
+                'stage': 'auth',
+                'auth_attempts': 0
             })
-        
-        # Check session timeout
-        if time.time() - session['init_time'] > SESSION_TIMEOUT:
+
+        # Check for session timeout
+        if time.time() - session.get('init_time', 0) > SESSION_TIMEOUT:
             return ussd_response("END Session expired. Please dial again.")
-        
-        # Main menu handler
-        if level == 0 or session.get('stage') == 'main':
-            if level > 0:
-                choice = inputs[0]
-                menu_options = {
-                    '1': {'handler': handle_clock, 'stage': 'clock'},
-                    '2': {'handler': handle_reporting, 'stage': 'report'},
-                    '3': {'handler': handle_leave, 'stage': 'leave'},
-                    '4': {'handler': handle_performance, 'stage': 'performance'},
-                    '5': {'message': "END Your payment summary will be sent via SMS."},
-                    '6': {'handler': handle_document, 'stage': 'docs'}
-                }
-                
-                if choice in menu_options:
-                    option = menu_options[choice]
-                    if 'handler' in option:
-                        session['stage'] = option['stage']
-                        return option['handler'](inputs[1:], phone, session)
-                    return ussd_response(option['message'])
-                
-                session['attempts'] += 1
-                if session['attempts'] >= MAX_ATTEMPTS:
+
+        # --- Authentication Stage ---
+        if session.get('stage') == 'auth':
+            if not inputs:
+                return ussd_response("CON Welcome to ElevateHR\nPlease enter your Employee ID:")
+            
+            emp_id = inputs[0].upper().strip()
+            if emp_id in VALID_JOB_IDS:
+                session['authenticated'] = True
+                session['emp_id'] = emp_id
+                session['stage'] = 'main_menu'
+                return show_main_menu(session)
+            else:
+                session['auth_attempts'] += 1
+                if session['auth_attempts'] >= MAX_ATTEMPTS:
                     return ussd_response("END Too many invalid attempts. Goodbye.")
-                
-            return ussd_response(
-                "CON Welcome to ElevateHR\n"
-                "1. Clock In/Out\n"
-                "2. Report Status\n"
-                "3. Request Leave\n"
-                "4. Performance Summary\n"
-                "5. Payment Summary\n"
-                "6. Download Documents\n"
-                "0. Exit"
-            )
-        
-        # Handle sub-menu stages
-        current_stage = session.get('stage')
-        if current_stage == 'clock':
-            return handle_clock(inputs, phone, session)
-        elif current_stage == 'report':
-            return handle_reporting(inputs, phone, session)
-        elif current_stage == 'leave':
-            return handle_leave(inputs, phone, session)
-        elif current_stage == 'performance':
-            return handle_performance(inputs, phone, session)
-        elif current_stage == 'docs':
-            return handle_document(inputs, phone, session)
-        
-        return ussd_response("END Invalid session state. Please dial again.")
-    
+                remaining = MAX_ATTEMPTS - session['auth_attempts']
+                return ussd_response(f"CON Invalid ID. {remaining} attempts left.\nEnter Employee ID:")
+
+        if not session.get('authenticated'):
+            return ussd_response("END Authentication failed. Please dial again.")
+
+        # --- Menu Navigation ---
+        menu_inputs = inputs[1:] if len(inputs) > 1 else []
+        stage = session.get('stage', 'main_menu')
+
+        if stage == 'main_menu':
+            if not menu_inputs:
+                return show_main_menu(session)
+
+            choice = menu_inputs[0]
+            
+            menu_options = {
+                '1': 'clock_menu',
+                '2': 'report_menu',
+                '3': 'leave_menu',
+                '4': 'performance_menu',
+                '6': 'docs_menu',
+            }
+
+            if choice == '0':
+                return ussd_response("END Thank you for using ElevateHR.")
+            elif choice == '5':
+                return ussd_response("END Your payment summary will be sent via SMS.")
+            elif choice in menu_options:
+                session['stage'] = menu_options[choice]
+                stage = session['stage']
+                menu_inputs = menu_inputs[1:]
+            else:
+                return show_main_menu(session, "Invalid option. Try again:")
+
+        # --- Submenu Stages ---
+        submenu_handlers = {
+            'clock_menu': handle_clock,
+            'report_menu': handle_reporting,
+            'leave_menu': handle_leave,
+            'performance_menu': handle_performance,
+            'docs_menu': handle_document
+        }
+
+        if stage in submenu_handlers:
+            handler = submenu_handlers[stage]
+            response = handler(menu_inputs, phone, session)
+            
+            if response is None:
+                session['stage'] = 'main_menu'
+                return show_main_menu(session)
+            return response
+
+        return ussd_response("END An unexpected error occurred. Please try again.")
+
     except Exception as e:
-        # Log the actual error for debugging
-        print(f"USSD Error: {str(e)}")
+        logging.error(f"Main Menu Error: {e}", exc_info=True)
         return ussd_response("END System error. Please try again later.")
-
-def ussd_response(text):
-    """Enhanced response formatter with proper USSD protocol handling"""
-    # Add any carrier-specific formatting if needed
-    return text
-
-# Example of adding time (if not already imported)
-import time

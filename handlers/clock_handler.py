@@ -1,56 +1,95 @@
 from datetime import datetime, timedelta
+import threading
+import logging
+from typing import Dict, Optional, List
 
-# Temporary storage - replace with database in production
-clock_records = {}
+# --- Failsafe Logging ---
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[logging.FileHandler('clock_system_audit.log'), logging.StreamHandler()],
+    format='%(asctime)s [%(levelname)s] %(message)s'
+)
 
-def handle_clock(inputs, phone, session):
-    """Handle both clock-in and clock-out with immediate action"""
-    now = datetime.now()
-    today = now.date()
-    
-    # Get existing record if any
-    user_record = clock_records.get(phone, {})
-    
-    # If user hasn't clocked in today or has already clocked out
-    if 'clock_in' not in user_record or user_record['clock_in'].date() != today:
-        return process_clock_in(phone, now)
-    elif 'clock_out' not in user_record:
-        return process_clock_out(phone, now, user_record)
-    else:
-        return show_clock_status(user_record)
-
-def process_clock_in(phone, now):
-    """Handle clock-in operation"""
-    clock_records[phone] = {
-        'clock_in': now,
-        'last_action': 'in'
-    }
-    return ussd_response(
-        f"END Clocked IN at {now.strftime('%I:%M %p')}\n"
-        f"Expected OUT: {(now + timedelta(hours=8)).strftime('%I:%M %p')}"
-    )
-
-def process_clock_out(phone, now, user_record):
-    """Handle clock-out operation"""
-    clock_records[phone]['clock_out'] = now
-    clock_records[phone]['last_action'] = 'out'
-    
-    duration = now - user_record['clock_in']
-    hours = duration.seconds // 3600
-    minutes = (duration.seconds % 3600) // 60
-    
-    return ussd_response(
-        f"END Clocked OUT at {now.strftime('%I:%M %p')}\n"
-        f"Work duration: {hours}h {minutes}m"
-    )
-
-def show_clock_status(record):
-    """Show completed clock status"""
-    return ussd_response(
-        "END Today's clocking complete:\n"
-        f"IN: {record['clock_in'].strftime('%I:%M %p')}\n"
-        f"OUT: {record['clock_out'].strftime('%I:%M %p')}"
-    )
+# --- Mock Database & Config ---
+clock_records: Dict[str, Dict] = {}
+CONFIG = {'MAX_WORK_HOURS': 8, 'SMS_ENABLED': True}
+_transaction_lock = threading.Lock()
 
 def ussd_response(text):
     return text
+
+# --- Core Clock-in/Out Logic ---
+def _get_user_record(phone: str) -> Dict:
+    return clock_records.get(phone, {})
+
+def _create_time_record(time: datetime) -> Dict:
+    return {'time': time, 'time_str': time.strftime('%I:%M %p')}
+
+def _process_clock_in(phone: str, now: datetime) -> str:
+    with _transaction_lock:
+        clock_records[phone] = {
+            'clock_in': _create_time_record(now),
+            'last_action': 'in'
+        }
+    expected_out = (now + timedelta(hours=CONFIG['MAX_WORK_HOURS'])).strftime('%I:%M %p')
+    from utils.sms_utils import SMSService
+    sms_service = SMSService()
+    sms_service.send_template(
+        phone_number=phone,
+        template_name="clock_confirm",
+        template_vars={
+            "action": "IN",
+            "time": now.strftime('%I:%M %p'),
+            "date": now.strftime('%Y-%m-%d')
+        }
+    )
+    return ussd_response(f"END Clocked IN at {now.strftime('%I:%M %p')}. Expected OUT: {expected_out}")
+
+def _process_clock_out(phone: str, now: datetime, record: Dict) -> str:
+    with _transaction_lock:
+        record['clock_out'] = _create_time_record(now)
+        record['last_action'] = 'out'
+        duration = now - record['clock_in']['time']
+        hours, rem = divmod(duration.seconds, 3600)
+        minutes, _ = divmod(rem, 60)
+    from utils.sms_utils import SMSService
+    sms_service = SMSService()
+    sms_service.send_template(
+        phone_number=phone,
+        template_name="clock_confirm",
+        template_vars={
+            "action": "OUT",
+            "time": now.strftime('%I:%M %p'),
+            "date": now.strftime('%Y-%m-%d')
+        }
+    )
+    return ussd_response(f"END Clocked OUT at {now.strftime('%I:%M %p')}. Worked: {hours}h {minutes}m.")
+
+# --- Main Handler ---
+def handle_clock(inputs: List[str], phone: str, session: Dict) -> Optional[str]:
+    """Handles the clock-in/out submenu."""
+    now = datetime.now()
+    user_record = _get_user_record(phone)
+    action = 'out' if user_record.get('last_action') == 'in' else 'in'
+
+    if not inputs:
+        status = "Clocked Out" if action == 'in' else "Clocked In"
+        prompt = f"Clock In" if action == 'in' else f"Clock Out"
+        return ussd_response(
+            f"CON Clock System\nStatus: {status}\n\n1. {prompt}\n0. Back"
+        )
+
+    choice = inputs[0]
+    if choice == '0':
+        return None  # Go back to main menu
+    
+    if choice == '1':
+        if action == 'in':
+            # Prevent re-clocking in if already done for the day
+            if user_record.get('last_action') == 'out' and user_record.get('clock_out'):
+                 return ussd_response("END You have already clocked in and out for the day.")
+            return _process_clock_in(phone, now)
+        else:
+            return _process_clock_out(phone, now, user_record)
+    
+    return ussd_response("CON Invalid option. Please try again.")
