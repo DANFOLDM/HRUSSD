@@ -12,8 +12,8 @@ import pytz
 class Config:
     AT_SANDBOX = False  # Set to False for production
     AT_SANDBOX_NUMBER = '+254711082000'
-    AT_USERNAME = 'EMID'  # <<< REPLACE WITH YOUR AFRICA'S TALKING USERNAME
-    AT_API_KEY = 'atsk_7f6f44b2508895580a036e17a5a4a50daf590648c8299da792b5ddf19340f1be3c094ba4'    # <<< REPLACE WITH YOUR AFRICA'S TALKING API KEY
+    AT_USERNAME = ''  # <<< REPLACE WITH YOUR AFRICA'S TALKING USERNAME
+    AT_API_KEY = ''    # <<< REPLACE WITH YOUR AFRICA'S TALKING API KEY
 
 # Initialize Flask app
 app = Flask(__name__)
